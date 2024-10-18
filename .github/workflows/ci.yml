@@ -1,0 +1,15 @@
+name: Test
+on: push
+jobs:
+  build:
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: "msys2 {0}"
+    steps:
+#      - uses: spatial-model-editor/setup-ci@2024.04.23
+      - run: |
+            wget https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-windows-x86_64.zip
+            unzip ccache*.zip
+            ls *
+      - run: ccache --version
