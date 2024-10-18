@@ -19,4 +19,4 @@ jobs:
             ls *
             ls /*
             cp ccache-*-windows-x86_64/ccache.exe /usr/bin/
-      - run: ccache --version
+      - run: ccache -p
