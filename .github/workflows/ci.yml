@@ -15,6 +15,6 @@ jobs:
           install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-python mingw-w64-ucrt-x86_64-python-pip mingw-w64-ucrt-x86_64-ninja mingw-w64-ucrt-x86_64-git-lfs make m4 git dos2unix diffutils flex bison
       - run: |
             wget https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-windows-x86_64.zip
-            tar -xf ccache-*-windows-x86_64.zip
+            unzip ccache-*-windows-x86_64.zip
             ls *
       - run: ccache --version
