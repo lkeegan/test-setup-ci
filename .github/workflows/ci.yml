@@ -17,4 +17,6 @@ jobs:
             wget https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-windows-x86_64.zip
             unzip ccache-*-windows-x86_64.zip
             ls *
+            ls /*
+            cp ccache-*-windows-x86_64/ccache.exe /usr/bin/
       - run: ccache --version
