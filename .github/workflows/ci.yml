@@ -7,16 +7,5 @@ jobs:
       run:
         shell: "msys2 {0}"
     steps:
-#      - uses: spatial-model-editor/setup-ci@2024.04.23
-      - uses: msys2/setup-msys2@v2
-        with:
-          msystem: UCRT64
-          update: true
-          install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-python mingw-w64-ucrt-x86_64-python-pip mingw-w64-ucrt-x86_64-ninja mingw-w64-ucrt-x86_64-git-lfs make m4 git dos2unix diffutils flex bison unzip
-      - run: |
-            wget https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-windows-x86_64.zip
-            unzip ccache-*-windows-x86_64.zip
-            ls *
-            ls /*
-            cp ccache-*-windows-x86_64/ccache.exe /usr/bin/
-      - run: ccache -p
+      - uses: spatial-model-editor/setup-ci@2024.10.29
+      - run: which ccache && ccache -p
