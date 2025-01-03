@@ -5,6 +5,7 @@ set -e -x
 # build static version of oneTBB
 git clone -b v2022.0.0 --depth 1 https://github.com/oneapi-src/oneTBB.git
 cd oneTBB
+git apply --ignore-space-change --ignore-whitespace --verbose ../tbb.diff
 mkdir build
 cd build
 cmake -GNinja .. \
@@ -15,6 +16,5 @@ cmake -GNinja .. \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
     -DTBB_ENABLE_IPO=OFF \
     -DTBB_STRICT=OFF \
-    -DTBB_TEST=OFF \
-    --trace-expand
+    -DTBB_TEST=OFF
 VERBOSE=1 time ninja tbb

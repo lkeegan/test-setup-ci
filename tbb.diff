@@ -1,0 +1,13 @@
+diff --git a/cmake/compilers/GNU.cmake b/cmake/compilers/GNU.cmake
+index da6b408a..f1728309 100644
+--- a/cmake/compilers/GNU.cmake
++++ b/cmake/compilers/GNU.cmake
+@@ -12,6 +12,8 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
++message(CRITICAL "${CMAKE_CXX_COMPILER_LINKER_VERSION}")
++
+ if (MINGW)
+     set(TBB_LINK_DEF_FILE_FLAG "")
+     set(TBB_DEF_FILE_PREFIX "")
