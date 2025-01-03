@@ -7,5 +7,5 @@ jobs:
       run:
         shell: "msys2 {0}"
     steps:
-      - uses: spatial-model-editor/setup-ci@2024.10.29
-      - run: which ccache && ccache -p
+      - uses: spatial-model-editor/setup-ci@2025.01.02
+      - run: cmake -E env "LANG=C" g++ -xc -c /dev/null -Wa,-v -o/dev/null
