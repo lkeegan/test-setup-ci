@@ -9,4 +9,5 @@ jobs:
     steps:
       - uses: spatial-model-editor/setup-ci@2025.01.02
       - uses: actions/checkout@v4
+      - run: D:/a/_temp/msys64/ucrt64/bin/cmake.exe -E env LANG=C D:/a/_temp/msys64/ucrt64/bin/c++.exe -xc -c /dev/null -Wa,-v -o/dev/null
       - run: ./build.sh
