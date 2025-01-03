@@ -8,4 +8,4 @@ jobs:
         shell: "msys2 {0}"
     steps:
       - uses: spatial-model-editor/setup-ci@2025.01.02
-      - run: cmake -E env "LANG=C" g++ -xc -c /dev/null -Wa,-v -o/dev/null
+      - run: cmake -E env "LANG=C" D:/a/_temp/msys64/ucrt64/bin/c++.exe -xc -c /dev/null -Wa,-v -o/dev/null
