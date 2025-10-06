@@ -24,3 +24,4 @@ jobs:
         shell: ${{ matrix.shell }}
     steps:
       - uses: spatial-model-editor/setup-ci@main
+      - run: ccache --version
