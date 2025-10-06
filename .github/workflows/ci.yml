@@ -2,12 +2,25 @@ name: Test
 on: push
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: "ubuntu-22.04"
+            shell: "bash"
+          - os: "ubuntu-22.04-arm"
+            shell: "bash"
+          - os: "macos-13"
+            shell: "bash"
+          - os: "macos-14"
+            shell: "bash"
+          - os: "windows-2022"
+            shell: "msys2 {0}"
+          - os: "windows-11-arm"
+            shell: "msys2 {0}"
     defaults:
       run:
-        shell: "msys2 {0}"
+        shell: ${{ matrix.shell }}
     steps:
-      - uses: spatial-model-editor/setup-ci@2025.01.02
-      - uses: actions/checkout@v4
-      - run: D:/a/_temp/msys64/ucrt64/bin/cmake.exe -E env LANG=C D:/a/_temp/msys64/ucrt64/bin/c++.exe -xc -c /dev/null -Wa,-v -o/dev/null
-      - run: ./build.sh
+      - uses: spatial-model-editor/setup-ci@main
